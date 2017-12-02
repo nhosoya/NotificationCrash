@@ -22,13 +22,13 @@ class ViewController: UIViewController {
                 let calendar = Calendar(identifier: .gregorian)
                 let timeZone = TimeZone.autoupdatingCurrent
 
-                guard let date = DateComponents(calendar: calendar, timeZone: timeZone, year: 2017, month: 12, day: 1).date
+                guard let date = DateComponents(calendar: calendar, timeZone: timeZone, year: 2017, month: 12, day: 31).date
                     else { return }
 
                 let notify = UILocalNotification()
                 notify.alertBody = "alert";
                 notify.alertAction = "view"
-                notify.repeatInterval = .month
+                notify.repeatInterval = .day
                 notify.fireDate = date
 
                 UIApplication.shared.scheduleLocalNotification(notify)
